@@ -20,7 +20,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 # Install PHP extensions required to connect to database
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-# Get latest Composer
+# Get latest Composer version
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # for security purposes I will Create system user to run Composer and Artisan Commands
