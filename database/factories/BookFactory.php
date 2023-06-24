@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Book;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Book>
- */
 class BookFactory extends Factory
 {
+    protected $model = Book::class;
+
     /**
      * Define the model's default state.
      *
@@ -16,16 +16,14 @@ class BookFactory extends Factory
      */
     public function definition()
     {
+        $genre = $this->faker->randomElement(['Horror', 'Comedy', 'Romance']);
+        
         return [
-            'isbn' => fake()->uniqid(),
-            'name' => fake()->name(),
-            'genre' => Str::random(10),
-            'Author' => Str::name(),
-            'description' => Str::random(10),
-            'createdAt' => date_time(),
-            'updatedAt' => now(), 
+            'isbn' => $this->faker->unique()->isbn13,
+            'name' => $this->faker->words(6, true),
+            'genre' => $genre,
+            'author' => $this->faker->name(),
+            'description' => $this->faker->sentence(50),
         ];
     }
-
-    
 }
