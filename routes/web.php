@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\BookController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,5 +21,7 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return Inertia::render('Test',["name"=>"adam"]);
 });
+
+//route pointing to BookController
 Route::get('/books', [BookController::class,'index']);
 // Route::get('/books/{isbn}', [BookController::class,'index']);
