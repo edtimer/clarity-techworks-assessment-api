@@ -1,6 +1,6 @@
 <template>
 
-<h1>Hello</h1>
+<h1>Hello from backend</h1>
 
 </template>
 
