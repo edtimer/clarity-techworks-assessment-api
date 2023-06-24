@@ -20,3 +20,4 @@ Route::get('/test', function () {
     return Inertia::render('Test',["name"=>"adam"]);
 });
 Route::get('/books', [BookController::class,'index']);
+// Route::get('/books/{isbn}', [BookController::class,'index']);
