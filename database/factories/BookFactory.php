@@ -23,7 +23,7 @@ class BookFactory extends Factory
             'name' => $this->faker->words(6, true),
             'genre' => $genre,
             'author' => $this->faker->name(),
-            'description' => $this->faker->sentence(50),
+            'description' => $this->faker->sentence(20),
         ];
     }
 }
