@@ -17,5 +17,6 @@ Route::get('/', function () {
     return Inertia::render('Welcome');
 });
 Route::get('/test', function () {
-    return Inertia::render('Test');
+    return Inertia::render('Test',["name"=>"adam"]);
 });
+Route::get('/books', [BookController::class,'index']);

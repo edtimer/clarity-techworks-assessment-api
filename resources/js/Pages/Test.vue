@@ -1,9 +1,13 @@
 <template>
 
-<h1>Hello from backend</h1>
+<h1>Hello from backend to {{ name }}</h1>
 
 </template>
 
 <script>
-export default {};
+export default {
+    props:{
+        name:String
+    }
+};
 </script>
